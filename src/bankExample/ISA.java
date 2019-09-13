@@ -1,10 +1,9 @@
 package bankExample;
 
-public class ISA extends PersonalSaverAcc {
-	//private static double interestRate = 14.5;
+public class ISA extends Account implements PersonalSaverAcc {
+	private static double interestRate = 14.5;
 	
-	
-	/*public void updateInterest(double tmpInterest) {
+	public void setInterestRate(double tmpInterest) {
 		interestRate = tmpInterest;
 		System.out.println("Updated interest rate: " + interestRate);
 	} 
@@ -13,16 +12,16 @@ public class ISA extends PersonalSaverAcc {
 		double tmpBalance = getBalance() + (getBalance() * (interestRate / 100));
 		setBalance(tmpBalance);
 		System.out.println("Your updated balance is: " + getBalance());
-	}*/
+	}
 	
-	public void depositFunds(double dropAmount) {
+	/*public void depositFunds(double dropAmount) {
 		double subTotal = getBalance() + dropAmount;
 		setBalance(subTotal);
 		System.out.println("The amount deposited was: " + dropAmount);
 		System.out.println("The total balance is: " + getBalance());
-	}
+	}*/
 	
-	public void withdrawFunds(double drawAmount) {
+	/*public void withdrawFunds(double drawAmount) {
 		if(getBalance() < drawAmount)
 		{
 			System.out.println("Account cannot withdraw more than current balance");
@@ -32,7 +31,7 @@ public class ISA extends PersonalSaverAcc {
 			System.out.println("The amount withdrawn was: " + drawAmount);
 			System.out.println("The total balance is: " + getBalance());
 		}
-	}	
+	}*/	
 	
 	// Verification of account info
 		/*public void verifyDetails(){

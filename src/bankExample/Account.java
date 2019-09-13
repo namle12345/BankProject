@@ -10,9 +10,27 @@ public abstract class Account {
 	private int sortCode = sortCodeGen();
 	private int accountNumber = accountCodeGen();
 	
-	public abstract void updateBalance();
-	public abstract void depositFunds(double dropAmount);
-	public abstract void withdrawFunds(double drawAmount);
+	/*public abstract void updateBalance();*/
+	
+	public void depositFunds(double dropAmount) {
+		double subTotal = getBalance() + dropAmount;
+		setBalance(subTotal);
+		System.out.println("The amount deposited was: " + dropAmount);
+		System.out.println("The total balance is: " + getBalance());
+	};
+	
+	public void withdrawFunds(double drawAmount) {
+		if(getBalance() < drawAmount)
+		{
+			System.out.println("Account cannot withdraw more than current balance");
+		} else {
+			double subTotal = getBalance() - drawAmount;
+			setBalance(subTotal);
+			System.out.println("The amount withdrawn was: " + drawAmount);
+			System.out.println("The total balance is: " + getBalance());
+		}
+	};
+	
 	
 	private static int idGen() {
 		ArrayList<Integer> list = new ArrayList<Integer>();

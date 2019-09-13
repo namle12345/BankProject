@@ -1,6 +1,6 @@
 package bankExample;
 
-public class CurrentAcc extends EverydayAcc {
+public class CurrentAcc extends Account implements EverydayAcc {
 	private int overdraft = 0;
 	private double odInterest = 0;
 	
@@ -43,13 +43,14 @@ public class CurrentAcc extends EverydayAcc {
 		odInterest = tmpInterest;
 	}
 	
-	public void depositFunds(double dropAmount) {
+	/*public void depositFunds(double dropAmount) {
 		double subTotal = getBalance() + dropAmount;
 		setBalance(subTotal);
 		System.out.println("The amount deposited was: " + dropAmount);
 		System.out.println("The total balance is: " + getBalance());
-	}
+	}*/
 	
+	@Override
 	public void withdrawFunds(double drawAmount) {
 		if(getBalance() < (0 - overdraft))
 		{
